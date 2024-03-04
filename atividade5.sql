@@ -43,8 +43,9 @@ create table fiador(
 	nome varchar(100) not null
 );
 
+alter table crediario modify column num_crediario int not null auto_increment;
+
 alter table crediario add column fiador varchar(11);
 
 alter table crediario add constraint fk_crediario_fiador foreign key(fiador) references fiador(cpf);
-
 describe crediario;
