@@ -1,0 +1,117 @@
+// 1)
+use vendas
+
+// 2)
+db.produtos.insertMany(
+  [
+    {
+      "genero-familia": "Embalagens",
+      "codigo": "01.033EM",
+      "nome-produto": "Caixas de Papelão",
+      "marca": "AA",
+      "quantidade": 100,
+      "unidade": "PC",
+      "valor-unitario": 1.50
+    },
+    {
+      "genero-familia": "Periféricos",
+      "codigo": "02.131PE",
+      "nome-produto": "Mouse SemFio",
+      "marca": "BB",
+      "quantidade": 20,
+      "unidade": "PC",
+      "valor-unitario": 18.00
+    },
+    {
+      "genero-familia": "Suprimentos",
+      "codigo": "03.209SU",
+      "nome-produto": "Toner HP 6112",
+      "marca": "CC",
+      "quantidade": 2,
+      "unidade": "CX",
+      "valor-unitario": 300.00
+    },
+    {
+      "genero-familia": "Hardware",
+      "codigo": "04.146HA",
+      "nome-produto": "Placa de Vídeo 256MB",
+      "marca": "EE",
+      "quantidade": 3,
+      "unidade": "PC",
+      "valor-unitario": 180.00
+    },
+    {
+      "genero-familia": "Ferramentas",
+      "codigo": "05.010FE",
+      "nome-produto": "Alicate de Bico",
+      "marca": "XX",
+      "quantidade": 5,
+      "unidade": "OC",
+      "valor-unitario": 11.60
+    },
+    {
+      "genero-familia": "Embalagens",
+      "codigo": "01.190EM",
+      "nome-produto": "Saco Plástico 20L",
+      "marca": "AA",
+      "quantidade": 20,
+      "unidade": "CT",
+      "valor-unitario": 35.50
+    },
+    {
+      "genero-familia": "Embalagens",
+      "codigo": "01.038EM",
+      "nome-produto": "Cesto de Arame",
+      "marca": "BB",
+      "quantidade": 20,
+      "unidade": "PC",
+      "valor-unitario": 22.00
+    },
+    {
+      "genero-familia": "Ferramentas",
+      "codigo": "01.032FE",
+      "nome-produto": "Chave de Fenda",
+      "marca": "XX",
+      "quantidade": 45,
+      "unidade": "PC",
+      "valor-unitario": 2.30
+    },
+    {
+      "genero-familia": "Hardware",
+      "codigo": "04.139HA",
+      "nome-produto": "Memória 1GB 667MHz",
+      "marca": "EE",
+      "quantidade": 30,
+      "unidade": "PC",
+      "valor-unitario": 45.00
+    },
+    {
+      "genero-familia": "Hardware",
+      "codigo": "04.081HA",
+      "nome-produto": "HD SATA 250GM",
+      "marca": "MM",
+      "quantidade": 10,
+      "unidade": "PC",
+      "valor-unitario": 230.20,
+    },
+  ]
+)
+
+// 3)
+db.produtos.find({})
+
+
+// 4)
+db.produtos.find({"marca":"AA"})
+
+// 5)
+db.produtos.find({"unidade":"PC"})
+
+// 6)
+db.produtos.updateOne({"codigo": "01.032FE"},{$set: {"valor-unitario": 2.50}})
+
+// 7)
+db.produtos.updateMany({"genero-familia": "Embalagens"}, {$set: {"marca": "TT"}})
+
+// 8)
+db.produtos.deleteOne({"codigo": "01.032FE"})
