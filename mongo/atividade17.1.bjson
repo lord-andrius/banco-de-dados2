@@ -1,0 +1,22 @@
+// a)
+db.pessoa.find({}, {_id: 0, nome: 1, idade: 1})
+
+// b)
+
+db.pessoa.find({nome: "Brenda"}, {})
+
+
+// c)
+db.pessoa.find({nome: /^A/)
+
+// d)
+db.pessoa.find({nome: /ci/})
+
+// e)
+db.pessoa.find({nome: /ta$/})
+
+// f)
+db.pessoa.find({$or:[{salario:{$gt: 10000}}, {salario:{$lt: 1000}}])
+
+// g)
+db.pessoa.find({$and:[{salario: {$gte: 2000}}, {salario: {$lt: 5000}}]})
